@@ -1,8 +1,8 @@
-package com.grados.mosh.arraylist;
+package com.grados.mosh.linkedlist;
 
 import java.util.NoSuchElementException;
 
-public class MyArrayList {
+public class MyLikedList {
     private static class Node {
         private int value;
         private Node next;
