@@ -2,14 +2,10 @@ package com.grados.mosh.stack;
 
 import java.util.ArrayDeque;
 import java.util.Arrays;
-import java.util.LinkedList;
 import java.util.Queue;
 
 public class StackWithTwoQueues {
-    // TODO : to be implemented
-    // q1 : [50]
-    // q2 : [40, 30, 20, 10]
-    //
+
     private Queue<Integer> q1 = new ArrayDeque<>();
     private Queue<Integer> q2 = new ArrayDeque<>();
     private int size;
