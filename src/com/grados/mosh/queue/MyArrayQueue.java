@@ -59,8 +59,8 @@ public class MyArrayQueue {
     public int peek(){
         if (isEmpty())
             throw new IllegalArgumentException();
-        System.out.println("peek :"+items[rear -1]);
-        return items[rear -1];
+        System.out.println("peek :"+items[rear - 1]);
+        return items[rear - 1];
     }
 
     @Override
