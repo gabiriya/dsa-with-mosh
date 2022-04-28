@@ -1,20 +1,24 @@
 package com.grados;
 
-import com.grados.mosh.stack.BalancedExpression;
-import com.grados.mosh.stack.MyStack;
+import com.grados.mosh.hashtable.FindChar;
+import com.grados.mosh.hashtable.MyHashTable;
 
-import java.util.Stack;
 
 public class Main {
 
     public static void main(String[] args) {
-        MyStack stack = new MyStack();
-        System.out.println(stack.isEmpty());
-        stack.push(10);
-        stack.push(20);
-        stack.push(30);
-        stack.push(40);
-        stack.pop();
-        stack.printIt();
+        MyHashTable hashTable = new MyHashTable();
+        hashTable.put(10,"youssef");
+        hashTable.put(11,"anass");
+        hashTable.put(13,"Andro");
+        System.out.println(hashTable.get(10));
+        System.out.println(hashTable.get(11));
+        System.out.println(hashTable.get(13));
+        System.out.println("Before");
+        hashTable.remove(11);
+        System.out.println(hashTable.get(10));
+        System.out.println(hashTable.get(11));
+        System.out.println(hashTable.get(13));
+
     }
 }
