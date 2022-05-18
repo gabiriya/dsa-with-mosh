@@ -1,5 +1,7 @@
 package com.grados.mosh.trees;
 
+import com.sun.source.tree.Tree;
+
 public class MyTree {
     // Tree (root)
     //Node(value,leftChild,rightChild)
@@ -125,7 +127,7 @@ public class MyTree {
     private int depth(Node root) {
         if (root == null) {
             return -1;
-        }else {
+        } else {
             int lDepth = depth(root.leftChild);
             int rDepth = depth(root.rightChild);
 
@@ -133,28 +135,58 @@ public class MyTree {
         }
     }
 
-    public int min(){
+    public int min() {
         if (root == null)
             throw new IllegalStateException();
         var current = root;
         var last = current;
-        while (current != null){
+        while (current != null) {
             last = current;
             current = current.leftChild;
         }
         return last.value;
     }
-    private int min(Node root){
+
+    private int min(Node root) {
         // base condition
         if (isLeaf(root))
             return root.value;
         var left = min(root.leftChild);
         var right = min(root.rightChild);
-        return Math.min(Math.min(left,right),root.value);
+        return Math.min(Math.min(left, right), root.value);
     }
 
     private boolean isLeaf(Node node) {
         return node.leftChild == null && node.rightChild == null;
+    }
+
+    public boolean areEquals(MyTree node) {
+        if (node == null)
+            return false;
+        return equals(node.root, root);
+    }
+
+    private boolean equals(Node node, Node root) {
+
+        if (node == null && root == null)
+            return true;
+        if (node != null && root != null)
+            return node.value == root.value
+                    && equals(node.rightChild, root.rightChild)
+                    && equals(node.leftChild, root.leftChild);
+        return false;
+    }
+
+    public boolean isBinarySearchTree(){
+        return isBinarySearchTree(root,Integer.MIN_VALUE, Integer.MAX_VALUE);
+    }
+    private boolean isBinarySearchTree(Node root, int min , int max){
+        // base condition
+        if (root == null)
+            return true;
+        if (root.value < min || root.value > max)
+            return false;
+        return isBinarySearchTree(root.leftChild,min , root.value - 1) && isBinarySearchTree(root.rightChild,root.value +1,max);
     }
 }
 
