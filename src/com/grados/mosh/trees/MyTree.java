@@ -177,16 +177,34 @@ public class MyTree {
         return false;
     }
 
-    public boolean isBinarySearchTree(){
-        return isBinarySearchTree(root,Integer.MIN_VALUE, Integer.MAX_VALUE);
+    public boolean isBinarySearchTree() {
+        return isBinarySearchTree(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
     }
-    private boolean isBinarySearchTree(Node root, int min , int max){
+
+    private boolean isBinarySearchTree(Node root, int min, int max) {
         // base condition
         if (root == null)
             return true;
         if (root.value < min || root.value > max)
             return false;
-        return isBinarySearchTree(root.leftChild,min , root.value - 1) && isBinarySearchTree(root.rightChild,root.value +1,max);
+        return isBinarySearchTree(root.leftChild, min, root.value - 1) && isBinarySearchTree(root.rightChild, root.value + 1, max);
+    }
+
+    // root  , k
+    public void kDistance(int k) {
+        kDistance(root, k);
+    }
+
+    private void kDistance(Node root, int k) {
+        if (root == null) {
+            return;
+        }
+        if (k == 0) {
+            System.out.println(root.value);
+            return;
+        }
+        kDistance(root.leftChild, k - 1);
+        kDistance(root.rightChild, k - 1);
     }
 }
 
