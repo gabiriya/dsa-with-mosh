@@ -1,4 +1,4 @@
-package com.grados.mywork;
+package com.grados.mywork.stackandqueue;
 
 import java.util.Arrays;
 import java.util.Stack;

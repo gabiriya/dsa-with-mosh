@@ -1,7 +1,4 @@
-package com.grados.mywork;
-
-import java.util.ArrayList;
-import java.util.List;
+package com.grados.mywork.array;
 
 public class TheArray {
     private int count = 0;
