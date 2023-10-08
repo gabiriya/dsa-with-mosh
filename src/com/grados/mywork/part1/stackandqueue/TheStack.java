@@ -1,13 +1,8 @@
-package com.grados.mywork.stackandqueue;
+package com.grados.mywork.part1.stackandqueue;
 
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.time.temporal.ChronoField;
-import java.time.temporal.TemporalAccessor;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Locale;
 import java.util.Stack;
 
 public class TheStack {

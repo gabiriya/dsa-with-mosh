@@ -1,4 +1,4 @@
-package com.grados.mywork.hashtable;
+package com.grados.mywork.part1.hashtable;
 
 import java.util.*;
 

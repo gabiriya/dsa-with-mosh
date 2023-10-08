@@ -1,4 +1,4 @@
-package com.grados.mywork;
+package com.grados.mywork.part1.linkedlist;
 
 public class TheLinkedList {
     private static class Node {

@@ -1,4 +1,4 @@
-package com.grados.mywork.array;
+package com.grados.mywork.part1.array;
 
 public class TheArray {
     private int count = 0;
